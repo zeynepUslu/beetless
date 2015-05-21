@@ -2,7 +2,7 @@
 Tests for `beetless` module.
 """
 import pytest
-from beetless import beetless
+import beetless
 
 
 class TestBeetless(object):

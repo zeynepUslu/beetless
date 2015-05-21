@@ -1,54 +1,41 @@
-#!/usr/bin/env python
-
-import os
-import sys
-
 try:
     from setuptools import setup
 except ImportError:
-    from distutils.core import setup
+    from .ez_setup import use_setuptools
+    use_setuptools()
 
 
-if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist upload')
-    sys.exit()
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
 
-readme = open('README.rst').read()
-doclink = """
-Documentation
--------------
-
-The full documentation is at http://beetless.rtfd.org."""
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+with open('HISTORY.rst') as history_file:
+    history = history_file.read().replace('.. :changelog:', '')
 
 setup(
     name='beetless',
     version='0.1.0',
     description='Music collection service and app.',
-    long_description=readme + '\n\n' + doclink + '\n\n' + history,
+    long_description=readme + '\n\n' + history,
     author='H. Turgut Uyar',
     author_email='uyar@itu.edu.tr',
     url='https://github.com/uyar/beetless',
-    packages=[
-        'beetless',
-    ],
+    packages=['beetless'],
     package_dir={'beetless': 'beetless'},
     include_package_data=True,
-    install_requires=[
-    ],
+    install_requires=[],
     license='MIT',
     zip_safe=False,
-    keywords='beetless',
+    keywords='music',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
+        "Environment :: Console",
+        "Intended Audience :: Developers",
+        "Intended Audience :: End Users/Desktop",
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: Implementation :: PyPy',
+        'Programming Language :: Python :: 3.4',
+        "Operating System :: OS Independent"
     ],
+    test_suite='tests',
+    tests_require=['pytest']
 )

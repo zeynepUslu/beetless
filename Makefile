@@ -24,7 +24,7 @@ clean-pyc:
 	find . -name '*~' -exec rm -f {} +
 
 lint:
-	flake8 beetless test
+	flake8 beetless tests
 
 test:
 	py.test
