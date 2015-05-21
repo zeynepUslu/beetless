@@ -23,7 +23,7 @@ setup(
     package_dir={'beetless': 'beetless'},
     include_package_data=True,
     install_requires=[],
-    license='MIT',
+    license='GPL',
     zip_safe=False,
     keywords='music',
     classifiers=[
@@ -31,7 +31,7 @@ setup(
         "Environment :: Console",
         "Intended Audience :: Developers",
         "Intended Audience :: End Users/Desktop",
-        'License :: OSI Approved :: MIT License',
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         'Natural Language :: English',
         'Programming Language :: Python :: 3.4',
         "Operating System :: OS Independent"
