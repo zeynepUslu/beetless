@@ -40,15 +40,15 @@ coverage:
 	coverage run --source beetless setup.py test
 	coverage report -m
 	coverage html
-	open htmlcov/index.html
+	# open htmlcov/index.html
 
 docs:
 	rm -f docs/beetless.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ beetless
+	sphinx-apidoc -o docs/modules/ beetless
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
-	open docs/_build/html/index.html
+	# open docs/_build/html/index.html
 
 release: clean
 	python setup.py sdist upload

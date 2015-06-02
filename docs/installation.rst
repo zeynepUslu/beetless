@@ -2,6 +2,6 @@
 Installation
 ============
 
-At the command line either via pip::
+At the command line via pip::
 
     $ pip install beetless
