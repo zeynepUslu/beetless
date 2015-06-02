@@ -43,9 +43,9 @@ coverage:
 	# open htmlcov/index.html
 
 docs:
-	rm -f docs/beetless.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/modules/ beetless
+	# rm -f docs/modules/beetless.rst
+	# rm -f docs/modules/modules.rst
+	sphinx-apidoc --no-toc -o docs/modules/ beetless
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	# open docs/_build/html/index.html
