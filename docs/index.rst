@@ -11,7 +11,6 @@ Contents
    contributing
    authors
    history
-   modules
 
 Feedback
 ========
