@@ -40,6 +40,16 @@ def get_albums():
     return {'albums': []}
 
 
+@bottle.route('/api/v1/tracks')
+def get_tracks():
+    """Get the tracks in the collection.
+
+    :return: All tracks in the collection.
+    :rtype: dict[str, list]
+    """
+    return {'tracks': []}
+
+
 def start(host='localhost', port=8080):
     """Start the API service.
 
