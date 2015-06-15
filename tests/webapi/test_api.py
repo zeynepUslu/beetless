@@ -44,6 +44,5 @@ def test_get_albums(opener):
     assert opener.get('albums') == {'albums': []}
 
 
-@pytest.mark.skipif("True")
 def test_get_tracks(opener):
     assert opener.get('tracks') == {'tracks': []}
