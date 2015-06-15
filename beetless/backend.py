@@ -15,52 +15,22 @@
 # You should have received a copy of the GNU General Public License
 # along with Beetless.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Module containing the ReST API for Beetless."""
-
-from beetless import bottle
-from beetless import backend
+"""Module containing the database operations for Beetless."""
 
 
-@bottle.route('/api/v1/artists')
 def get_artists():
     """Get the artists in the collection.
 
     :return: All artists in the collection.
-    :rtype: dict[str, list[str]]
+    :rtype: list[str]
     """
-    artists = backend.get_artists()
-    return {'artists': artists}
+    return []
 
 
-@bottle.route('/api/v1/albums')
 def get_albums():
     """Get the albums in the collection.
 
     :return: All albums in the collection.
-    :rtype: dict[str, list[str]]
+    :rtype: list[str]
     """
-    albums = backend.get_albums()
-    return {'albums': albums}
-
-
-@bottle.route('/api/v1/tracks')
-def get_tracks():
-    """Get the tracks in the collection.
-
-    :return: All tracks in the collection.
-    :rtype: dict[str, list]
-    """
-    return {'tracks': []}
-
-
-def start(host='localhost', port=8080):
-    """Start the API service.
-
-    :param str host: Server address to bind to.
-    :param int port: Server port to bind to.
-    """
-    bottle.run(host=host, port=port)
-
-
-if __name__ == '__main__':
-    start()
+    return []
